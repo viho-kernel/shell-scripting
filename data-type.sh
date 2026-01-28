@@ -7,6 +7,6 @@ SUM=$((NUM1+NUM2))
 
 echo "Total sum of numbers is $SUM"
 
-ANIMALS=("Lion" "Cheetah" "TIGER" "ELEPHANT")
+ANIMALS=("Lion" "Cheetah" "TIGER")
 
 echo "Animals in Zoo are: ${ANIMALS[$@]}"
