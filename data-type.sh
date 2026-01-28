@@ -9,4 +9,4 @@ echo "Total sum of numbers is $SUM"
 
 ANIMALS=("Lion" "Cheetah" "TIGER")
 
-echo "Animals in Zoo are: ${ANIMALS[n-1]}"
+echo "Animals in Zoo are: ${ANIMALS[0, n-1]}"
