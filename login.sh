@@ -19,3 +19,4 @@ elif [ $OPTION -eq 2 ]; then
 
 fi
 
+echo "$0"
