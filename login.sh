@@ -19,6 +19,3 @@ elif [ $OPTION -eq 2 ]; then
 
 fi
 
-echo $0
-echo "$PWD"
-echo "$USER"

@@ -5,4 +5,3 @@ echo "$PWD"
 echo "$USER"
 echo "$Home"
 echo $$
-echo "sleep 100 &"
