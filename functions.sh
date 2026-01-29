@@ -1,9 +1,10 @@
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]; then
-echo "Run the script as Root User"
-exit 1
-
+    echo "Run the script as Root User"
+    exit 1
+    else "The user is Root :) Thanks proceed further"
+    exit 0
 fi
 
 VALIDATE() {
