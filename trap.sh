@@ -24,16 +24,6 @@ else
 
 fi
 
-VALIDATE() {
-    if [ $1 -ne 0 ]; then
-       echo -e"$2....$R Failed     :( $N" | tee -a $LOG_FILE
-       exit 1
-    else
-       echo -e "$2....$G Successful :) $N" | tee -a $LOG_FILE
-    fi
-
-}
-
 for PACKAGE in $@
 do 
    dnf list installed $PACKAGE &>>$LOG_FILE
