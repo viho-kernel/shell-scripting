@@ -1,27 +1,23 @@
 USER_ID=$(id -u)
 
-if [ $USER_ID -ne 0 ]; then
-    echo "Run the script as Root User"
-    exit 1
-    else "The user is Root :) Thanks proceed further"
-    exit 0
+if [ USER_ID -ne 0 ]; then
+   echo "USER is not a ROOT"
+   exit 1
+else
+   echo "User is a ROOT Guy :) Proceed further"
+   exit 0
+
 fi
 
 VALIDATE() {
     if [ $1 -ne 0 ]; then
-       echo "$2... Failure"
-    exit 1
+      echo "$2.... Failed :("
+      exit 1
     else
-       echo "$2 ... Success"
-    fi
-
+      echo "$2.... Success :)"
+      exit 0
+    fi 
 }
 
 dnf install nginx -y
-VALIDATE $? "Installing NGINX"
-
-dnf install mysql -y
-VALIDATE $? "Installing mysql"
-
-dnf install httpd -y
-VALIDATE $? "Installing http"
+VALIDATE $? "Insalling Nginx"
