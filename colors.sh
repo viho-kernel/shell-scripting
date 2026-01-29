@@ -41,7 +41,7 @@ do
    VALIDATE $? "Installing $PACKAGE"
 
    else 
-       echo -e " $PACKAGE installed already, \e[34mskipping \e[0m" | tee -a $LOG_FILE
+       echo -e " $Y $PACKAGE installed already, $Y skipping $N" | tee -a $LOG_FILE
 
     fi
 done
