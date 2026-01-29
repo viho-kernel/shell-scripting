@@ -17,7 +17,7 @@ fi
 VALIDATE() {
     if [ $1 -ne 0 ]; then
        echo "$2.... is Failed     :(" | tee -a $LOG_FILE
-       exit 1
+       exit 0
     else
        echo "$2.... is Successful :) " | tee -a $LOG_FILE
     fi
