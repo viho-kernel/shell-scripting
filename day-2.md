@@ -54,3 +54,46 @@ tee -a $LOG_FILE
 ============================
 Loops
 ===========================
+for i in [condition]; then
+do --> start loop
+
+done -> close loop
+
+dnf list insalled --> to check list of installed packages in our system
+
+=================================
+Colors in Linux
+===============================
+R -> 31
+G -> 32
+B -> 33
+Y -> 34
+
+To print a color '\e[31m', '\e[32 m', '\e[33m', '\e[34m'
+
+echo -e '\e[31m] HelloWorld'
+# echo -e '\e[34mHelloWorld'
+HelloWorld
+
+echo -e '\e[31mHelloWorld, \e[0m I am learning shell'
+HelloWorld,  I am learning shell
+form the above command only Hello world prints in red rest in normal color
+we must pass -e to enable colors
+
+===========================================
+Error Handling In Shell
+==========================================
+#SET command
+
+set -e "This will be checking for errors, if errors it will exit"
+
+#Trap Command
+
+trap command err(Signal)
+
+To see where exactly the error was caused. 
+
+trap 'echo "There is an error caused at the $LINE_NO, Command: $BASH_COMMAND" ' ERR
+
+This will tell us the line number and exact command which caused the error.
+$LINE_NO and $BASH_COMMAND are default commands provided by Shell
