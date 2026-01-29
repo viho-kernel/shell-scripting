@@ -3,6 +3,9 @@ USER_ID=$(id -u)
 if [ $USER_ID -ne 0 ]; then
    echo "USER is not a ROOT"
    exit 1
+else
+   echo "User is already ROOT"
+   exit 0
 fi
 
 VALIDATE(){
