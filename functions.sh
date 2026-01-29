@@ -1,26 +1,31 @@
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]; then
-   echo "USER is not a ROOT"
+   echo "You are not a Root user"
    exit 1
 else
-   echo "User is already ROOT"
+   echo "You are a ROOT USER"
+
 fi
 
-VALIDATE(){
+VALIDATE() {
     if [ $1 -ne 0 ]; then
-      echo "$2.... Failed :("
-      exit 1
+       echo "$2.... Failed :("
+       exit 1
     else
-      echo "$2.... Success :)"
-    fi 
+       echo "$2.... Success :) "
+    fi
+
 }
 
 dnf install nginx -y
-VALIDATE $? "Insalling Nginx"
+
+VALIDATE $? "Installing Nginx"
 
 dnf install mysql -y
-VALIDATE $? "Installing MYsql"
 
-dnf install nodejs -y
-VALIDATE $? "Installing nodejs"
+VALIDATE $? "Installing mysql"
+
+dnf install httpd -y
+
+VALIDATE $? "Installing httpd"
