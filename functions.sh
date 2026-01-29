@@ -5,7 +5,6 @@ if [ $USER_ID -ne 0 ]; then
    exit 1
 else
    echo "User is a ROOT Guy :) Proceed further"
-   exit 0
 
 fi
 
