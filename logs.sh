@@ -33,7 +33,7 @@ do
    VALIDATE $? "Installing $PACKAGE"
 
    else 
-       echo " "$package" installed already, skipping"
+       echo " $package installed already, skipping" | tee -a $LOG_FILE
 
     fi
 done
