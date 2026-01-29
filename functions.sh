@@ -3,10 +3,6 @@ USER_ID=$(id -u)
 if [ $USER_ID -ne 0 ]; then
    echo "USER is not a ROOT"
    exit 1
-else
-   echo "User is a ROOT Guy :) Proceed further"
-   exit 0
-
 fi
 
 VALIDATE(){
@@ -20,3 +16,9 @@ VALIDATE(){
 
 dnf install nginx -y
 VALIDATE $? "Insalling Nginx"
+
+dnf install mysql -y
+VALIDATE $? "Installing MYsql"
+
+dnf install nodejs -y
+VALIDATE $? 'Installing nodejs"
