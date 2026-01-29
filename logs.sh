@@ -24,14 +24,9 @@ VALIDATE() {
 
 }
 
-dnf install nginx -y &>> $LOG_FILE
+for PACKAGE in $@
+do 
+   dnf install $PACKAGE -y &>> $LOG_FILE
+   VALIDATE $? "Installing $PACKAGE"
 
-VALIDATE $? "Installing Nginx"
-
-dnf install mysql -y &>> $LOG_FILE
-
-VALIDATE $? "Installing mysql"
-
-dnf install httpds -y &>> $LOG_FILE
-
-VALIDATE $? "Installing httpd"
+done
