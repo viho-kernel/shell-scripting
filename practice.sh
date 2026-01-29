@@ -32,11 +32,13 @@ fi
 }
 
 for PACKAGE in $@
+
 do
    dnf list installed $PACKAGE | tee -a &>> $LOG_FILE 
    if [ $? -ne 0 ]; then
       dnf install $PACKAGE -y | tee -a &>> $LOG_FILE 
-      echo "$PACKAGE installed succesfully :)"
+      
+      echo "$PACKAGE not installed succesfully. Hence, installing" | tee -a &>> $LOG_FILE
    else
       echo "$PACKAGE already installed. So skipping dude.." | tee -a &>> $LOG_FILE
        
