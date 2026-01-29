@@ -5,7 +5,6 @@ if [ $USER_ID -ne 0 ]; then
    exit 1
 else
    echo "User is already ROOT"
-   exit 0
 fi
 
 VALIDATE(){
