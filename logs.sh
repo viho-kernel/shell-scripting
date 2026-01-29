@@ -1,3 +1,5 @@
+#!/bin/bash
+
 USER_ID=$(id -u)
 LOG_FOLDER="/var/log/shell-sctipt-logs"
 LOG_FILE="/var/log/shell-sctipt-logs/$0.log"
