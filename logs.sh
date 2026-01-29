@@ -30,6 +30,6 @@ dnf install mysql -y &>> LOG_FILE
 
 VALIDATE $? "Installing mysql"
 
-dnf install httpd -y &>> LOG_FILE
+dnf install httpds -y &>> LOG_FILE
 
 VALIDATE $? "Installing httpd"
