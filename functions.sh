@@ -1,6 +1,6 @@
 USER_ID=$(id -u)
 
-if [ USER_ID -ne 0 ]; then
+if [ $USER_ID -ne 0 ]; then
    echo "USER is not a ROOT"
    exit 1
 else
