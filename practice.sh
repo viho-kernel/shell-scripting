@@ -14,7 +14,7 @@ USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]; then
    echo -e " $R You are not running the script as Root User. $N"
-   EXIT 1
+   exit 1
 else
    echo "$G You are already a Root USER :) $N"
 fi
@@ -40,7 +40,6 @@ if [ $? -ne 0 ]; then
    echo "$PACKAGE not installed succesfully. Hence, installing" | tee -a $LOG_FILE
 else
    echo "$PACKAGE already installed. So skipping dude." | tee -a $LOG_FILE
-       
 done
 
 VALIDATE $? "$PACKAGE installation"
