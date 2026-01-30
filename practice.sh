@@ -23,24 +23,23 @@ mkdir -p $LOG_FOLDER
 
 VALIDATE() {
 if [ $1 -ne 0 ]; then
-    echo -e "$R $2... Failed $N" | tee -a &>> $LOG_FILE 
+    echo -e "$R $2... Failed $N" | tee -a $LOG_FILE 
     EXIT 1
 else
-    echo -e "$G $2... Successful $N" | tee -a &>> $LOG_FILE 
+    echo -e "$G $2... Successful $N" | tee -a $LOG_FILE 
 fi
 
 }
 
 for PACKAGE in $@
-
 do
-   dnf list installed $PACKAGE | tee -a &>> $LOG_FILE 
-   if [ $? -ne 0 ]; then
-      dnf install $PACKAGE -y | tee -a &>> $LOG_FILE 
+   dnf list installed $PACKAGE | tee -a $LOG_FILE 
+if [ $? -ne 0 ]; then
+   dnf install $PACKAGE -y | tee -a $LOG_FILE 
       
-      echo "$PACKAGE not installed succesfully. Hence, installing" | tee -a &>> $LOG_FILE
-   else
-      echo "$PACKAGE already installed. So skipping dude.." | tee -a &>> $LOG_FILE
+   echo "$PACKAGE not installed succesfully. Hence, installing" | tee -a $LOG_FILE
+else
+   echo "$PACKAGE already installed. So skipping dude." | tee -a $LOG_FILE
        
 done
 
