@@ -40,6 +40,9 @@ if [ $? -ne 0 ]; then
    echo "$PACKAGE not installed succesfully. Hence, installing" | tee -a $LOG_FILE
 else
    echo "$PACKAGE already installed. So skipping dude." | tee -a $LOG_FILE
+
 done
+
+fi
 
 VALIDATE $? "$PACKAGE installation"
