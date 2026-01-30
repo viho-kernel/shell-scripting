@@ -16,7 +16,7 @@ if [ $USER_ID -ne 0 ]; then
    echo -e " $R You are not running the script as Root User. $N"
    exit 1
 else
-   echo "$G You are already a Root USER :) $N"
+   echo -e "$G You are already a Root USER :) $N"
 fi
 
 mkdir -p $LOG_FOLDER
@@ -24,7 +24,7 @@ mkdir -p $LOG_FOLDER
 VALIDATE() {
 if [ $1 -ne 0 ]; then
     echo -e "$R $2... Failed $N" | tee -a $LOG_FILE 
-    EXIT 1
+    exit 1
 else
     echo -e "$G $2... Successful $N" | tee -a $LOG_FILE 
 fi
