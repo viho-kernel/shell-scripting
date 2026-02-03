@@ -7,7 +7,7 @@
 # This script will report the AWS resource usage.
 ########################################
 
-set -x
+set -e
 
 
 # AWS S3
@@ -32,4 +32,4 @@ aws lambda list-functions
 #List IAM Users
 echo "==============================="
 echo "IAM users"
-aws iam list-users
+aws iam list-users | jq 'Users[].UserName.UserID'
