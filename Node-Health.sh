@@ -8,6 +8,8 @@
 # Version: v1
 ################################################
 
+set -X
+
 echo "Print the Disk Space"
 df -h
 
