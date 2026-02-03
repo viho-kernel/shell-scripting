@@ -12,7 +12,7 @@ echo "Print the Disk Space"
 df -h
 
 echo "Print the memory"
-free
+free -g
 
 echo "Print the CPU"
 dfproc
