@@ -18,18 +18,18 @@ set -e
 
 echo "==============================="
 echo "S3 Buckets"
-aws s3 ls
+aws s3 ls &>> resource.txt
 #list ec2 instances
 echo "==============================="
 echo "ec2 instance"
-aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId' &>> resource.txt
 
 #List aws lambda function
 echo "==============================="
 echo "Lambda functions"
-aws lambda list-functions
+aws lambda list-functions &>> resource.txt
 
 #List IAM Users
 echo "==============================="
 echo "IAM users"
-aws iam list-users | jq '.Users[].UserName,.UserId,.CreateDate'
+aws iam list-users | jq '.Users[].UserName' &>> resource.txt
