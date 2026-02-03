@@ -32,4 +32,4 @@ aws lambda list-functions
 #List IAM Users
 echo "==============================="
 echo "IAM users"
-aws iam list-users | jq 'Users[].UserID'
+aws iam list-users | jq '.Users[].UserID'
