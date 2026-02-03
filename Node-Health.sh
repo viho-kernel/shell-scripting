@@ -17,4 +17,4 @@ echo "Print the memory"
 free -g
 
 echo "Print the CPU"
-dfproc
+nproc
