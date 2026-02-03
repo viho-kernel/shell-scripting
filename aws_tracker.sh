@@ -18,7 +18,7 @@ set -e
 
 echo "==============================="
 echo "S3 Buckets"
-aws s3 ls echo >> resource.txt
+aws s3 ls &>> resource.txt
 #list ec2 instances
 echo "==============================="
 echo "ec2 instance"
