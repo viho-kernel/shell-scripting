@@ -12,13 +12,21 @@
 #AWS LAMBDA
 
 #TO list s3 buckets.
-aws s3 ls
 
+echo "==============================="
+echo "S3 Buckets"
+aws s3 ls
 #list ec2 instances
+echo "==============================="
+echo "ec2 instance"
 aws ec2 describe-instances 
 
 #List aws lambda function
+echo "==============================="
+echo "Lambda functions"
 aws lambda list-functions
 
 #List IAM Users
+echo "==============================="
+echo "IAM users"
 aws iam list-users
