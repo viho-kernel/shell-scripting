@@ -22,7 +22,7 @@ aws s3 ls
 #list ec2 instances
 echo "==============================="
 echo "ec2 instance"
-aws ec2 describe-instances | jq 'InstanceId'
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
 
 #List aws lambda function
 echo "==============================="
