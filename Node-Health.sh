@@ -8,7 +8,7 @@
 # Version: v1
 ################################################
 
-set -X
+set -x #debug mode
 
 echo "Print the Disk Space"
 df -h
