@@ -7,6 +7,9 @@
 # This script will report the AWS resource usage.
 ########################################
 
+set -x
+
+
 # AWS S3
 #AWS EC2
 #AWS LAMBDA
@@ -19,7 +22,7 @@ aws s3 ls
 #list ec2 instances
 echo "==============================="
 echo "ec2 instance"
-aws ec2 describe-instances 
+aws ec2 describe-instances | jq 'InstanceId'
 
 #List aws lambda function
 echo "==============================="
