@@ -19,6 +19,6 @@ do
    echo 
    echo " The files which has to be deleted $line "
    echo " =================Deleting the Files==============="
-   echo rm $line
+   echo removing $line | rm $line
    echo " =================Deleted the Files================"
 done <<< $FILES_TO_DELETE
