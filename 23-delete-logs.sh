@@ -17,4 +17,4 @@ FILES_TO_DELETE=$(find $LOG_FOLDER -name "*.log" -mtime +14)
 echo "Files to delete is: ${FILES_TO_DELETE}"
 cd $LOG_FOLDER
 rm ${FILES_TO_DELETE}
-echo "Deleted ${FILES_TO_DELETE} file : \n)"
+echo "\nDeleted ${FILES_TO_DELETE} file : \n)"
