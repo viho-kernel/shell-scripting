@@ -13,7 +13,7 @@ else
    exit 1
 fi
 
-FILES_TO_DELETE=$(find $LOG_FOLDER "*.txt" -f -mtime +14)
+FILES_TO_DELETE=$(find $LOG_FOLDER -name "*.txt"  -mtime +14)
 
 while IFS= read -r line; do 
   echo "Files to delete is: $"line" "
