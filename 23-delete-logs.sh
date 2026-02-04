@@ -16,9 +16,9 @@ fi
 FILES_TO_DELETE=$(find $LOG_FOLDER -name "*.txt"  -mtime +14)
 
 while IFS= read -r line; do 
-  echo "Files to delete is: $"line" "
+  echo "Files to delete is: $line "
   cd $LOG_FOLDER
-  rm $"line"
-echo "Deleted $"line" file :)"
+  rm $line
+echo "Deleted $line file :)"
 
 done <<< $FILES_TO_DELETE
