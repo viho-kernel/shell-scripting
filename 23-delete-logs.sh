@@ -1,7 +1,6 @@
 #!/bin/bash
 
 LOG_FOLDER=/root/app-logs/
-LOG_FILE="$LOG_FOLDER/$0.log"
 
 
 #check if directory present or not
