@@ -1,9 +1,5 @@
 #!/bin/bash
 
-DIR=$(pwd)
-
-cd ${DIR}
-
 COUNT=1
 
 while [ $COUNT -lt 3 ];
