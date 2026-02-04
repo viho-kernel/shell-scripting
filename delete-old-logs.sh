@@ -21,4 +21,4 @@ do
    echo " =================Deleting the Files==============="
    rm $line
    echo " =================Deleted the Files================"
-done <<< $line
+done <<< $FILES_TO_DELETE
