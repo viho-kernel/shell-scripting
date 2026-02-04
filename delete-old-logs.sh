@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FOLDER=/root/app-log
+FOLDER=/root/app-logs/
 
 if [ -d $FOLDER ]; then
    echo "Folder ${FOLDER} does exist"
