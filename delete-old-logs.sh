@@ -16,6 +16,7 @@ while IFS= read -r line;
 do
    echo "Moving to the Directory"
    cd $FOLDER
+   echo 
    echo " The files which has to be deleted $line "
    echo " =================Deleting the Files==============="
    rm $line
