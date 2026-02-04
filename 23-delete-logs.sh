@@ -12,4 +12,4 @@ if [ ! -d $LOG_FOLDER ];then
 fi
 
 FILES_TO_DELETE=$(find $LOG_FOLDER -name "*.log" -mtime +14)
-echo "$FILES_TO_DELETE"
+echo "Files to delete is: ${FILES_TO_DELETE}"
