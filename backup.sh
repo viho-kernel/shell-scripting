@@ -78,7 +78,6 @@ else
           echo "Deleting files: $filepath"
           echo "========================"
           rm -f $filepath
-          echo "Deleted file: $filepath"
           echo "*************************"
           log "Deleted file: $filepath"
           echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%"
