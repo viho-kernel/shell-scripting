@@ -58,3 +58,29 @@ log "Backup Started"
 log "Source Directory: $SOURCE_DIR"
 log "Destination Directory: $DEST_DIR"
 log "Days: $DAYS"
+
+if [ -z "${FILES}" ]; then
+    log "No Files to archieve... $Y Skipping $N"
+else
+    #app-logs-$timestamp.zip
+    log "Files found to archieve: $FILES"
+    TIMESTAMP=$(date +%F-%H-%M-%S)
+    ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz"
+    echo "Archieve Name: $ZIP_FILE_NAME"
+    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | tar -zcvf $ZIP_FILE_NAME
+
+    if [ -f $ZIP_FILE_NAME ]; then
+        log "Archieval is ... $G success $N"
+
+        while IFS= read -r filepath; 
+        do
+          echo "Deleting files: $filepath"
+          rm -f $filepath
+          echo "Delete file: $filepath"
+        done <<< $FILES
+    else
+        log "Archieval is ... $G Failure $N"
+        exit 1
+    fi
+
+fi
