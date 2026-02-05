@@ -78,6 +78,7 @@ else
           echo "Deleting files: $filepath"
           rm -f $filepath
           echo "Deleted file: $filepath"
+          log "Deleted file: $filepath"
         done <<< $FILES
     else
         log "Archieval is ... $G Failure $N"
