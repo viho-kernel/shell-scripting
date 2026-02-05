@@ -76,9 +76,12 @@ else
         while IFS= read -r filepath; 
         do
           echo "Deleting files: $filepath"
+          echo "========================"
           rm -f $filepath
           echo "Deleted file: $filepath"
+          echo "*************************"
           log "Deleted file: $filepath"
+          echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%"
         done <<< $FILES
     else
         log "Archieval is ... $G Failure $N"
