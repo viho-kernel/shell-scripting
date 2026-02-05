@@ -35,7 +35,7 @@ log () {
     echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOG_FILE
 }
 
-if [ $# lt 2 ];then
+if [ $# -lt 2 ];then
    USAGE
 fi
 
@@ -68,16 +68,16 @@ else
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz"
     echo "Archieve Name: $ZIP_FILE_NAME"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | tar -zcvf $ZIP_FILE_NAME
+    tar -zcvf "$ZIP_FILE_NAME" $(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
     if [ -f $ZIP_FILE_NAME ]; then
         log "Archieval is ... $G success $N"
 
-        while IFS= read -r line; 
+        while IFS= read -r filepath; 
         do
-          echo "Deleting files: $line"
-          rm -f $line
-          echo "Deleted file: $line"
+          echo "Deleting files: $filepath"
+          rm -f $filepath
+          echo "Deleted file: $filepath"
         done <<< $FILES
     else
         log "Archieval is ... $G Failure $N"
