@@ -3,8 +3,8 @@
 
 
 USER_ID=$(id -u)
-LOG_FOLDER="/root/shell-scripting/"
-LOG_FILE="/var/log/shell-sctipt-logs/$0.log"
+LOG_FOLDER="/root/shell-scripting-logs/"
+LOG_FILE="$LOG_FOLDER/$0.log"
 
 R="\e[31m"
 G="\e[32m"
