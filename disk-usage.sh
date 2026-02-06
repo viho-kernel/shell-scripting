@@ -29,6 +29,6 @@ do
 
 done <<< $DISK_USAGE
 
-echo -e "$MESSAGE"
+#echo -e "$MESSAGE"
 
 sh mail.sh "vihari.reddy1802@gmail.com" "${SUBJECT}" "${MESSAGE}" "DISK_UTILIZATION" "${IP_ADDRESS}" "DevOps Team" "${Instance_ID}"
