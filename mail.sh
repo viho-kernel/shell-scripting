@@ -9,12 +9,10 @@ TO_TEAM=$6
 Instance_ID=$7
 
 FINAL_MESSAGE_BODY=$(printf "%s" "$MESSAGE_BODY" | sed -e 's/[]\/$*.^[]/\\&/g')
-FINAL_MESSAGE=$(sed -e "s/TO_Team/$TO_TEAM/g" \
+FINAL_MESSAGE=$(sed -e "s/TO_TEAM/$TO_TEAM/g" \
 -e "s/ALERT_TYPE/$ALERT_TYPE/g" \
--e "s/server/$Instance_ID/g" \
 -e "s/SERVER_IP/$SERVER_IP/g" \
 -e "s/MESSAGE/$FINAL_MESSAGE_BODY/g" template.html)
-FINAL_MESSAGE_BODY="<ul>$FINAL_MESSAGE_BODY</ul>"
 #==========================================
 #Alternate 
 #FINAL_MESSAGE=$(sed -e "s|TO_TEAM|$TO_TEAM|g" \
