@@ -8,10 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
-
-
-
-
+MESSAGE=""
 log(){
     echo -e "$(date "+%Y-%m-%d %H:%M%S") | $1" | tee -a $LOG_FILE
 }
@@ -31,3 +28,5 @@ do
 
 
 done <<< $DISK_USAGE
+
+echo "$MESSAGE"
