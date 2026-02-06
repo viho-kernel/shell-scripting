@@ -1,0 +1,33 @@
+#!/bin/bash
+
+LOG_FOLDER="/root/shell-scripting-logs/"
+LOG_FILE="$LOG_FOLDER/$0.log"
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+N="\e[0m"
+
+
+
+
+log(){
+    echo -e "$(date "+%Y-%m-%d %H:%M%S") | $1" | tee -a $LOG_FILE
+}
+
+DISK_USAGE=$(df -hT | grep -v Filesystem)
+USAGE_THRESHOLD=10
+
+while IFS= read -r line
+do
+  
+   USAGE=$line
+   PARTITION=$(df -hT | grep -v Filesystem | awk '{print $7}')
+
+   if [ $USAGE -gt $PARTITION ]; then
+        MESSAGE="High Disk Usage on $PARTITION: $USAGE"
+   fi
+
+
+done <<< $DISK_USAGE
