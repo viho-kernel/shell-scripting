@@ -8,7 +8,7 @@ SERVER_IP=$5
 TO_TEAM=$6
 Instance_ID=$7
 
-FINAL_MESSAGE_BODY=$(printf "%s" "$MESSAGE_BODY" | sed -e 's/[\/&]/\\&/g')
+FINAL_MESSAGE_BODY=$(printf "%s" "$MESSAGE_BODY" | sed -e 's/$/<br>/g' -e 's/\n/<br>/g')
 FINAL_MESSAGE=$(sed -e "s/TO_Team/$TO_TEAM/g" \
 -e "s/ALERT_TYPE/$ALERT_TYPE/g" \
 -e "s/server/$Instance_ID/g" \
