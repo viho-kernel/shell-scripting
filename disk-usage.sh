@@ -13,7 +13,7 @@ log(){
     echo -e "$(date "+%Y-%m-%d %H:%M%S") | $1" | tee -a $LOG_FILE
 }
 
-DISK_USAGE=$(df -hT | grep -v Filesystem)
+DISK_USAGE=$(df -hT | grep -v Filesystem | awk '{print $6}' | cur -d "%" -f1 )
 USAGE_THRESHOLD=10
 
 while IFS= read -r line
