@@ -26,7 +26,7 @@ do
    PARTITION=$(df -hT | grep -v Filesystem | awk '{print $7}')
 
    if [ "$USAGE" -gt "$PARTITION" ]; then
-        MESSAGE="High Disk Usage on $PARTITION: $USAGE"
+        MESSAGE+="High Disk Usage on $PARTITION: $USAGE"
    fi
 
 
